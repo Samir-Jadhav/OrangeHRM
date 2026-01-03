@@ -23,12 +23,15 @@ public class DummyClass extends BaseClass {
 		String pageTitle = driver.getTitle();
 		Assert.assertEquals(pageTitle, "OrangeHRM");
 		
-		Response res = given()
+		 given()
 		
 		.when()
-			.get(prop.getProperty("url"));
+			.get(prop.getProperty("url"))
+			
+		.then()
+			.statusCode(200);
 		
-		Assert.assertEquals(res.getStatusCode(), equalTo(200));
+		
 			
 		
 			
